@@ -6,7 +6,7 @@ import axios from "axios";
 
 function App() {
   const [img, setImg] = useState();
-  const [count, setCount] = useState(0);
+
   const MINUTE_MS = 5000;
   const getPosts = async () => {
     try {
@@ -15,19 +15,6 @@ function App() {
         const imageObjectURL: any  = URL.createObjectURL(res.data);
        
         setImg(imageObjectURL)
-      // const keys = res.data.results[0].series[0].columns;
-      // const values = res.data.results[0].series[0].values[0];
-
-      // var obj = [];
-
-      // //for each loop
-      // keys.forEach((ele, i) => {
-      //   obj[ele] = values[i];
-      // });
-
-      // setDatas(obj);
-      // //print the obj
-      // console.log(obj);
     } catch (err) {
       console.log(`ERROR: ${err}`);
     }
